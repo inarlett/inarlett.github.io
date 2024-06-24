@@ -7,45 +7,95 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .sidebar {
-            position: fixed;
-            width: 200px;
-            height: 100%;
+        .navbar {
+            width: 100%;
             background-color: #000;
-            color: #fff;
-            padding: 20px;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
-        .sidebar a {
-            color: #00f;
+        .navbar a {
+            float: left;
             display: block;
-            margin: 10px 0;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
             text-decoration: none;
         }
-        .sidebar a:hover {
-            text-decoration: underline;
+        .navbar a:hover {
+            background-color: #575757;
         }
         .content {
-            margin-left: 220px;
-            padding: 20px;
+            padding: 60px 20px; /* Add some padding to avoid content being hidden behind the navbar */
         }
         .footer {
+            padding: 10px;
+            text-align: center;
+            color: #000;
             position: fixed;
             bottom: 20px;
-            left: 220px;
-            padding: 10px;
-            color: #000;
+            width: 100%;
         }
+	.language-options {
+	  position: relative;
+	}
+
+	.language-toggle {
+	  display: block;
+	  padding: 0.5em 1em;
+	  background-color: #f0f0f0;
+	  border: 1px solid #ccc;
+	  cursor: pointer;
+	}
+
+	.language-toggle:hover {
+	  background-color: #e0e0e0;
+	}
+
+	.language-list {
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  width: 100%;
+	  padding: 0;
+	  list-style-type: none;
+	  background-color: #fff;
+	  border: 1px solid #ccc;
+	  display: none;
+	}
+
+	.language-list li {
+	  padding: 0.5em 1em;
+	  cursor: pointer;
+	}
+
+	.language-list li:hover {
+	  background-color: #f0f0f0;
+	}
     </style>
 </head>
 <body>
-    <div class="sidebar">
+    <div class="navbar">
         <a href="#">homepage</a>
         <a href="#">document</a>
         <a href="#">faq</a>
         <a href="#">about me</a>
         <a href="#">my github page</a>
     </div>
+    <div id="language-options">
+  	<button type="button" id="language-toggle">语言</button>
+  	<ul id="language-list" style="display: none;">
+    	<li><a href="#">英语</a></li>
+    	<li><a href="#">西班牙语</a></li>
+    	<li><a href="#">法语</a></li>
+  	</ul>
+	</div>
+
     <div class="content">
         <h1>Inarlett's HomePage</h1>
         <p>Mostly a learner</p>
@@ -53,6 +103,8 @@
     <div class="footer">
         other platform: bilibili twitter
     </div>
+
 </body>
+
 </html>
 
