@@ -1,0 +1,14 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = ["hugo-xmin"]
+[markup.goldmark.extensions.passthrough]
+    enable = true
+    delimiters.block = [
+      ["\\[", "\\]"],
+      ["$$", "$$"]
+    ]
+    delimiters.inline = [
+      ["\\(", "\\)"],
+      ["$", "$"]
+    ]
